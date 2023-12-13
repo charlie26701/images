@@ -1,4 +1,3 @@
-# images
 # 目前可用的映像檔
 
 * [`dotnet`](https://github.com/charlie26701/images/tree/master/dotnet)
