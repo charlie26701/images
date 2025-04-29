@@ -9,11 +9,11 @@ RUN apt-get update -y && \
     && echo "container:container" | chpasswd \
     && echo "container ALL=(ALL) ALL" >> /etc/sudoers
 
+COPY ./../entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
-
-COPY ./../entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"] 
